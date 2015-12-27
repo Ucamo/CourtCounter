@@ -4,8 +4,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    int scoreTeamA=0;
+    int scoreTeamB=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,5 +38,52 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Displays the given score for Team A.
+     */
+    public void displayForTeamA(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_a_score);
+        scoreView.setText(String.valueOf(score));
+    }
+    /**
+     * Displays the given score for Team B.
+     */
+    public void displayForTeamB(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
+        scoreView.setText(String.valueOf(score));
+    }
+
+    public void add3PointsForTeamA(View v){
+        int score=3;
+        scoreTeamA=scoreTeamA+score;
+        displayForTeamA(scoreTeamA);
+    }
+    public void add2PointsForTeamA(View v){
+        int score=2;
+        scoreTeamA=scoreTeamA+score;
+        displayForTeamA(scoreTeamA);
+    }
+    public void add1PointsForTeamA(View v){
+        int score=1;
+        scoreTeamA=scoreTeamA+score;
+        displayForTeamA(scoreTeamA);
+    }
+
+    public void add3PointsForTeamB(View v){
+        int score=3;
+        scoreTeamB=scoreTeamB+score;
+        displayForTeamB(scoreTeamB);
+    }
+    public void add2PointsForTeamB(View v){
+        int score=2;
+        scoreTeamB=scoreTeamB+score;
+        displayForTeamB(scoreTeamB);
+    }
+    public void add1PointsForTeamB(View v){
+        int score=1;
+        scoreTeamB=scoreTeamB+score;
+        displayForTeamB(scoreTeamB);
     }
 }
